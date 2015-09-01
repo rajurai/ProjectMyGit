@@ -8,7 +8,7 @@
       
 ###  1. Servers
       
-      <p>This serction includes details information all the server actions available.</p>
+      This serction includes details information all the server actions available.
 
   <p>
   Servers information.
@@ -18,10 +18,10 @@
 METHOD  |  URI                                        |DESCRIPTION
 --------|---------------------------------------------|-------------
 GET     | /servers                                    |List all the servers
-GET     | /servers/<server_id>                        |Get the specific server 
+GET     | /servers/\<server_id>                        |Get the specific server 
 POST    | /servers                                    |Creates a new server
-PATCH   | /servers/<server_name>                      |Updates a server name
-DELETE  | /servers/<server_name>                      |Deletes a server
+PATCH   | /servers/\<server_name>                      |Updates a server name
+DELETE  | /servers/\<server_name>                      |Deletes a server
 
 
 
