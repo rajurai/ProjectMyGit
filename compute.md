@@ -1,15 +1,14 @@
 ## *<font color='red'>Alliance Compute API v1 (CURRENT)</font>*
       
       This page lists the Compute API operations in the following order: 
-      1. Servers
-      2. Flavors
+            1. Servers
+            
+            2. Flavors
       
       
 ###  1. Servers
       
-      Manages the server creation, updation, listing,Create the servers,Get the servres details,Upadate the servers,Delete the servers.
-
-        Creates servers with the given information. The request and response examples show how to create multiple servers with or without a reservation ID
+      <p>This serction includes details information all the server actions available.</p>
 
   <p>
   Servers information.
@@ -18,11 +17,11 @@
 
 METHOD  |  URI                                        |DESCRIPTION
 --------|---------------------------------------------|-------------
-GET     | /servers                                    |List servers
-GET     | /servers/id                                 |Get specific server
-POST    | /servers                                    |Create server
-PATCH   | /servers/name                               |Update server
-DELETE  | /servers/name                               |Delete servers
+GET     | /servers                                    |List all the servers
+GET     | /servers/<server_id>                        |Get the specific server 
+POST    | /servers                                    |Creates a new server
+PATCH   | /servers/<server_name>                      |Updates a server name
+DELETE  | /servers/<server_name>                      |Deletes a server
 
 
 
@@ -30,10 +29,10 @@ DELETE  | /servers/name                               |Delete servers
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-GET     | /servers                    |List servers
+GET     | /servers                    |List all the servers
 
 <p>
-It shows list of servers present in database.
+It will list all the available servers information.
 </p>
 
 <p><b>Normal response codes</b>: 200
@@ -54,15 +53,15 @@ This operation does not accept a request body.
 
 ```
 
-#### 1.2  Get Specific server
+#### 1.2  Get a specific server
 
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-GET     | /servers/id                 |Get specific server
+GET     | /servers/<server_id>        |Get a specific server
 
 <p>
-It shows specific server information whose id we passed in URI.
+It will show a specific servers information matching with an server id we are passing in URI.
 </p>
 
 <p><b>Normal response codes</b>: 200 
@@ -71,7 +70,7 @@ It shows specific server information whose id we passed in URI.
 </p>
 
      
-##### 1.2.1. Get specific servers Request:
+##### 1.2.1. Get specific server Request:
 
 This operation does not accept a request body.
 
@@ -85,14 +84,14 @@ This operation does not accept a request body.
 
 ```
 
-#### 1.3  Create server
+#### 1.3  Creates a server
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
 POST    | /servers                    |Create server
 
 <p>
-It creates the server with its details that we send in request body in database.
+It creates a new server with the details that we pass in the request body.
 </p>
 
 ##### Important 
@@ -115,7 +114,7 @@ For sending request through request body select raw as a body editor.
 ```
 {
     "server": {
-        "name": "demo_instance_final",
+        "name": "demo_instance",
         "flavor": "m1.small",
         "image": "cirros-0.3.4-x86_64-uec",
         "keyname": "admin-key",
@@ -138,10 +137,10 @@ For sending request through request body select raw as a body editor.
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-PATCH   | /servers/name               |Update server
+PATCH   | /servers/<server_name>      |Update server
 
 <p>
-It updates the server with its details that we send in request body.
+It updates the server name with new name that we pass in the request body.
 </p>
 
 ##### Important 
@@ -185,10 +184,10 @@ For sending request through request body select raw as a body editor.
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-DELETE  | /servers/name               |Delete servers
+DELETE  | /servers/<server_name>      |Delete servers
 
 <p>
-It delete the server information whose id we passed in URI.
+It deletes a server matching with the name we pass in URI.
 </p>
 
 <p><b>Normal response codes</b>: 
