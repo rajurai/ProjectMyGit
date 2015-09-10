@@ -8,7 +8,7 @@
       
 ###  1. Servers
       
-      This section includes details information all the server actions available.
+      This section includes the detailed information of all the server actions available.
 
   <p>
   Servers information.
@@ -35,9 +35,9 @@ GET     | /servers                    |List all the servers
 It will list all the available servers information.
 </p>
 
-<p><b>Normal response codes</b>: 200
+<p><b>Normal response code</b>: 200
 </p>
-<p><b>Error response codes</b>: 
+<p><b>Error response code</b>: 
 </p>
      
 ##### 1.1.1. List servers Request:
@@ -89,15 +89,15 @@ GET http://\<servername>:\<port_no>/servers/
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-GET     | /servers/<server_id>        |Get a specific server
+GET     | /servers/\<server_id>        |Get a specific server
 
 <p>
 It will show a specific servers information matching with an server id we are passing in URI.
 </p>
 
-<p><b>Normal response codes</b>: 200 
+<p><b>Normal response code</b>: 200 
 </p>
-<p><b>Error response codes</b>: 
+<p><b>Error response code</b>: 
 </p>
 
      
@@ -196,9 +196,9 @@ It creates a new server with the details that we pass in the request body.
 For sending request through request body select raw as a body editor.
 </p>
 
-<p><b>Normal response codes</b>:200 
+<p><b>Normal response code</b>:200 
 </p>
-<p><b>Error response codes</b>: 
+<p><b>Error response code</b>: 
 </p>
 
      
@@ -215,8 +215,12 @@ POST http://\<servername>:\<port_no>/servers/
         "flavor": "m1.small",
         "image": "cirros-0.3.4-x86_64-uec",
         "keyname": "admin-key",
-        "network": "private"
-    }
+        "min_count":"2",
+        "networks": {
+            "network_id_1": "private",
+            "network_id_2": "public"
+          }
+    }  
 } 
 
 ```
@@ -229,7 +233,7 @@ POST http://\<servername>:\<port_no>/servers/
 ```
 {
   "server": {
-    "name": [
+    "name": "demo_instance" [
       {
         "href": "http://128.107.2.152:8774/v2/54915a05b0bb43dcbb218525c426b6a5/servers/827e0c8a-910d-46f4-9afd-380850949952",
         "rel": "self"
@@ -274,7 +278,7 @@ POST http://\<servername>:\<port_no>/servers/
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-PATCH   | /servers/<server_name>      |Update server
+PATCH   | /servers/\<server_name>      |Update server
 
 <p>
 It updates the server name with new name that we pass in the request body.
@@ -286,9 +290,9 @@ It updates the server name with new name that we pass in the request body.
 For sending request through request body select raw as a body editor.
 </p>
 
-<p><b>Normal response codes</b>: 200
+<p><b>Normal response code</b>: 200
 </p>
-<p><b>Error response codes</b>: 
+<p><b>Error response code</b>: 
 </p>
 
      
@@ -367,7 +371,7 @@ PATCH http://\<servername>:\<port_no>/servers/\<server_name>
         "192.168.15.55"
       ]
     },
-    "name": "code_instance_update",
+    "name": "demo_instance_update",
     "created": "2015-09-02T04:31:37Z",
     "tenant_id": "54915a05b0bb43dcbb218525c426b6a5",
     "id": "827e0c8a-910d-46f4-9afd-380850949952",
@@ -388,9 +392,9 @@ DELETE  | /servers/\<server_name>      |Delete servers
 It deletes a server matching with the name we pass in URI.
 </p>
 
-<p><b>Normal response codes</b>:200 OK 
+<p><b>Normal response code</b>:200 OK 
 </p>
-<p><b>Error response codes</b>: 
+<p><b>Error response code</b>: 
 </p>
 
      
