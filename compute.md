@@ -1,10 +1,8 @@
 ## *<font color='red'>Alliance Compute API v1 (CURRENT)</font>*
       
-      This page lists the Compute API operations in the following order: 
+      This page lists the Compute API operations available: 
             1. Servers
             
-            2. Flavors
-      
       
 ###  1. Servers
       
@@ -20,8 +18,8 @@ METHOD  |  URI                                        |DESCRIPTION
 GET     | /servers                                    |List all the servers
 GET     | /servers/\<server_id>                       |Get the specific server 
 POST    | /servers                                    |Creates a new server
-PATCH   | /servers/\<server_name>                     |Updates a server name
-DELETE  | /servers/\<server_name>                     |Deletes a server
+PATCH   | /servers/\<server_id>                       |Updates a server name
+DELETE  | /servers/\<server_id>                       |Deletes a server
 
 
 
@@ -41,6 +39,14 @@ It will list all the available servers information.
 </p>
      
 ##### 1.1.1. List servers Request:
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for List servers Request:</p>
+
+Name                  |  Type                       |Value
+----------------------|---------------------------- |-------------
+X-Target-Ns           | String                      |\<namespace>eg.ccsr1
+X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
+
 
 GET http://\<servername>:\<port_no>/servers/
 
@@ -89,7 +95,7 @@ GET http://\<servername>:\<port_no>/servers/
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-GET     | /servers/\<server_id>        |Get a specific server
+GET     | /servers/\<server_id>       |Get a specific server
 
 <p>
 It will show a specific servers information matching with an server id we are passing in URI.
@@ -102,6 +108,13 @@ It will show a specific servers information matching with an server id we are pa
 
      
 ##### 1.2.1. Get specific server Request:
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for Get specific server Request:</p>
+
+Name                  |  Type                       |Value
+----------------------|---------------------------- |-------------
+X-Target-Ns           | String                      |\<namespace>eg.ccsr1
+X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
 GET http://\<servername>:\<port_no>/servers/\<server_id>
 
@@ -173,7 +186,6 @@ GET http://\<servername>:\<port_no>/servers/\<server_id>
     "created": "2015-08-10T19:59:49Z",
     "tenant_id": "54915a05b0bb43dcbb218525c426b6a5",
     "id": "7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
-    "progress": 0
   }
 }
 
@@ -196,13 +208,21 @@ It creates a new server with the details that we pass in the request body.
 For sending request through request body select raw as a body editor.
 </p>
 
-<p><b>Normal response code</b>:200 
+<p><b>Normal response code</b>:201
 </p>
 <p><b>Error response code</b>: 
 </p>
 
      
 ##### 1.3.1. Create server Request
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for Create server Request:</p>
+
+Name                  |  Type                       |Value
+----------------------|---------------------------- |-------------
+X-Target-Ns           | String                      |\<namespace>eg.ccsr1
+X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
+
 
 POST http://\<servername>:\<port_no>/servers/
 
@@ -211,18 +231,14 @@ POST http://\<servername>:\<port_no>/servers/
 ```
 {
     "server": {
-        "name": "demo_instance",
-        "flavor": "m1.small",
-        "image": "cirros-0.3.4-x86_64-uec",
-        "keyname": "admin-key",
-        "min_count":"2",
-        "networks": {
-            "network_id_1": "private",
-            "network_id_2": "public"
-          }
+        "name": "instance_test",
+        "flavor": "42",
+        "image": "c9dcc32d-60f1-4e17-8996-046216fe9746",
+        "keyname": "",
+        "min_count":"1",
+        "networks": "[{'net-id':'fc6b502a-5365-4c24-93e5-e40bfdf7c5a0', 'v4-fixed-ip': ''}]"
     }  
-} 
-
+}
 ```
 
 
@@ -278,7 +294,7 @@ POST http://\<servername>:\<port_no>/servers/
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-PATCH   | /servers/\<server_name>      |Update server
+PATCH   | /servers/\<server_id>       |Update server
 
 <p>
 It updates the server name with new name that we pass in the request body.
@@ -298,7 +314,14 @@ For sending request through request body select raw as a body editor.
      
 ##### 1.4.1. Update server Request
 
-PATCH http://\<servername>:\<port_no>/servers/\<server_name>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for Update server Request:</p>
+
+Name                  |  Type                       |Value
+----------------------|---------------------------- |-------------
+X-Target-Ns           | String                      |\<namespace>eg.ccsr1
+X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
+
+PATCH http://\<servername>:\<port_no>/servers/\<server_id>
 
 ###### Example 5. Update server : JSON request
 
@@ -375,8 +398,7 @@ PATCH http://\<servername>:\<port_no>/servers/\<server_name>
     "created": "2015-09-02T04:31:37Z",
     "tenant_id": "54915a05b0bb43dcbb218525c426b6a5",
     "id": "827e0c8a-910d-46f4-9afd-380850949952",
-    "progress": 0
-  }
+ }
 }
 
 ```
@@ -386,13 +408,13 @@ PATCH http://\<servername>:\<port_no>/servers/\<server_name>
 
 METHOD  |  URI                        |DESCRIPTION
 --------|---------------------------- |-------------
-DELETE  | /servers/\<server_name>      |Delete servers
+DELETE  | /servers/\<server_id>       |Delete servers
 
 <p>
 It deletes a server matching with the name we pass in URI.
 </p>
 
-<p><b>Normal response code</b>:200 OK 
+<p><b>Normal response code</b>:204 
 </p>
 <p><b>Error response code</b>: 
 </p>
@@ -400,11 +422,17 @@ It deletes a server matching with the name we pass in URI.
      
 ##### 1.5.1. Delete server Request:
 
-DELETE http://\<servername>:\<port_no>/servers/\<server_name>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for Delete server Request:</p>
+
+Name                  |  Type                       |Value
+----------------------|---------------------------- |-------------
+X-Target-Ns           | String                      |\<namespace>eg.ccsr1
+X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
+
+DELETE http://\<servername>:\<port_no>/servers/\<server_id>
 
 
 ##### 1.5.2 Delete server Response
 
 This operation does not return any json response.
-
 
