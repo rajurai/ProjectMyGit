@@ -1,7 +1,7 @@
-## *<font color='red'>Alliance Compute API v1 (CURRENT)</font>*
+## *<font color='red'>Alliance Glance API v1 (CURRENT)</font>*
       
       This page lists the images API operations available: 
-            1. Servers
+            1. Image
             
       
 ###  1. Image
@@ -17,9 +17,9 @@ METHOD  |  URI                                        |DESCRIPTION
 --------|---------------------------------------------|-------------
 GET     | /images                                     |List all the images
 GET     | /images/\<image_id>                         |Get the specific image 
-POST    | /images                                     |Create a new image
-PATCH   | /images/\<image_id>                         |Update a image name
-DELETE  | /images/\<image_id>                         |Delete a image
+POST    | /images                                     |Creates a new image
+PATCH   | /images/\<image_id>                         |Updates an image information
+DELETE  | /images/\<image_id>                         |Deletes an image
 
 
 
@@ -57,6 +57,8 @@ GET http://\<imagename>:\<port_no>/images/
 
 ```
 [
+  {
+    images:
   {
     "status": "queued",
     "created_at": "2015-09-25T15:49:21Z",
@@ -98,7 +100,9 @@ GET http://\<imagename>:\<port_no>/images/
     "virtual_size": null,
     "id": "1e29aea2-cd8b-4a76-b829-3ae8be5bc1ad",
     "size": null
-  }]
+  }
+}
+]
 
 ```
 
@@ -110,7 +114,7 @@ METHOD  |  URI                        |DESCRIPTION
 GET     | /images/\<image_id>        |Get a specific image
 
 <p>
-It will show a specific images information matching with an image id we are passing in URI.
+It will show a specific image information matching with an image id we are passing in URI.
 </p>
 
 <p><b>Normal response code</b>: 200 
@@ -178,7 +182,7 @@ It creates a new image with the details that we pass in the request body.
 For sending request through request body select raw as a body editor.
 </p>
 
-<p><b>Normal response code</b>:200 
+<p><b>Normal response code</b>:201
 </p>
 <p><b>Error response code</b>: 
 </p>
