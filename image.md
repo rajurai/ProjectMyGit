@@ -35,9 +35,7 @@ It will list all the available images information.
 
 <p><b>Normal response code</b>: 200
 </p>
-<p><b>Error response code</b>: 
-</p>
-     
+
 ##### 1.1.1. List images Request:
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This table shows the header parameters for List images Request:</p>
@@ -49,7 +47,7 @@ X-Target-Ns           | String                      |\<namespace>eg.ccsr1
 X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
 
-GET http://\<imagename>:\<port_no>/images/
+GET http://\<hostname>:\<port_no>/images/
 
 ##### 1.1.2 List images Response
 
@@ -119,8 +117,6 @@ It will show a specific image information matching with an image id we are passi
 
 <p><b>Normal response code</b>: 200 
 </p>
-<p><b>Error response code</b>: 
-</p>
 
      
 ##### 1.2.1. Get specific image Request:
@@ -134,7 +130,7 @@ X-Target-Ns           | String                      |\<namespace>eg.ccsr1
 X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
 
-GET http://\<imagename>:\<port_no>/images/\<image_id>
+GET http://\<hostname>:\<port_no>/images/\<image_id>
 
 
 ##### 1.2.2 Get specific image Response
@@ -184,8 +180,6 @@ For sending request through request body select raw as a body editor.
 
 <p><b>Normal response code</b>:201
 </p>
-<p><b>Error response code</b>: 
-</p>
 
      
 ##### 1.3.1. Create image Request
@@ -198,7 +192,7 @@ Content-Type          | String                      | application/json
 X-Target-Ns           | String                      |\<namespace>eg.ccsr1
 X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
-POST http://\<imagename>:\<port_no>/images/
+POST http://\<hostname>:\<port_no>/images/
 
 ###### Example 3. Create image : JSON request
 
@@ -264,8 +258,6 @@ For sending request through request body select raw as a body editor.
 
 <p><b>Normal response code</b>: 200
 </p>
-<p><b>Error response code</b>: 
-</p>
 
      
 ##### 1.4.1. Update image Request
@@ -278,7 +270,7 @@ Content-Type          | String                      | application/json
 X-Target-Ns           | String                      |\<namespace>eg.ccsr1
 X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
-PUT http://\<imagename>:\<port_no>/images/\<image_name>
+PUT http://\<hostname>:\<port_no>/images/\<image_name>
 
 ###### Example 5. Update image : JSON request
 
@@ -338,8 +330,6 @@ It deletes a image matching with the id we pass in URI.
 
 <p><b>Normal response code</b>:200 OK 
 </p>
-<p><b>Error response code</b>: 
-</p>
 
      
 ##### 1.5.1. Delete image Request:
@@ -352,7 +342,7 @@ Content-Type          | String                      | application/json
 X-Target-Ns           | String                      |\<namespace>eg.ccsr1
 X-Environment-Id      | String                      |\<environment-id>eg.54915a05b0bb43dcbb218525c426b6a5
 
-DELETE http://\<imagename>:\<port_no>/images/\<image_name>
+DELETE http://\<hostname>:\<port_no>/images/\<image_id>
 
 
 ##### 1.5.2 Delete image Response
