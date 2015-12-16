@@ -54,54 +54,53 @@ GET http://\<hostname>:\<port_no>/images/
 ###### Example 1. List images : JSON response
 
 ```
-[
-  {
-    images:
-  {
-    "status": "queued",
-    "created_at": "2015-09-25T15:49:21Z",
-    "name": "cirrosimage",
-    "tags": [],
-    "container_format": "bare",
-    "min_ram": 0,
-    "disk_format": "qcow2",
-    "updated_at": "2015-09-25T15:49:21Z",
-    "visibility": "private",
-    "copy_from": "http://cloudhyd.com/openstack/images/cirros-0.3.0-i386-disk.img",
-    "owner": "54915a05b0bb43dcbb218525c426b6a5",
-    "schema": "/v2/schemas/image",
-    "protected": false,
-    "file": "/v2/images/75da8211-b8d3-4329-a12b-953e7db4690a/file",
-    "checksum": null,
-    "min_disk": 0,
-    "virtual_size": null,
-    "id": "75da8211-b8d3-4329-a12b-953e7db4690a",
-    "size": null
-  },
-  {
-    "status": "queued",
-    "created_at": "2015-09-25T15:29:08Z",
-    "name": "telstaimage",
-    "tags": [],
-    "container_format": "bare",
-    "min_ram": 1,
-    "disk_format": "qcow2",
-    "updated_at": "2015-09-25T15:29:08Z",
-    "visibility": "private",
-    "copy_from": "http://cloudhyd.com/openstack/images/cirros-0.3.0-i386-disk.img",
-    "owner": "54915a05b0bb43dcbb218525c426b6a5",
-    "schema": "/v2/schemas/image",
-    "protected": false,
-    "file": "/v2/images/1e29aea2-cd8b-4a76-b829-3ae8be5bc1ad/file",
-    "checksum": null,
-    "min_disk": 500,
-    "virtual_size": null,
-    "id": "1e29aea2-cd8b-4a76-b829-3ae8be5bc1ad",
-    "size": null
-  }
+{
+  "image": [
+    {
+      "status": "active",
+      "_loaded": true,
+      "name": "cirros-0.3.4-x86_64-uec",
+      "deleted": false,
+      "container_format": "ami",
+      "created_at": "2015-12-02T11:05:53.000000",
+      "disk_format": "ami",
+      "updated_at": "2015-12-02T11:05:54.000000",
+      "id": "dc00e717-12a4-4570-8c60-ed47be0c34f8",
+      "min_disk": 0,
+      "protected": false,
+      "min_ram": 0,
+      "checksum": "eb9139e4942121f22bbc2afc0400b2a4",
+      "owner": "c4a203c39b8e4ecb91feff1a9820dca8",
+      "is_public": true,
+      "virtual_size": null,
+      "properties": {
+        "kernel_id": "74f8e168-a2ba-486d-ae87-ef2aa7b482d2",
+        "ramdisk_id": "57ed5365-e4a6-466e-9250-c427ecf0e465"
+      },
+      "size": 25165824
+    },
+    {
+      "status": "active",
+      "_loaded": true,
+      "name": "cirros-0.3.4-x86_64-uec-ramdisk",
+      "deleted": false,
+      "container_format": "ari",
+      "created_at": "2015-12-02T11:05:51.000000",
+      "disk_format": "ari",
+      "updated_at": "2015-12-02T11:05:52.000000",
+      "id": "57ed5365-e4a6-466e-9250-c427ecf0e465",
+      "min_disk": 0,
+      "protected": false,
+      "min_ram": 0,
+      "checksum": "be575a2b939972276ef675752936977f",
+      "owner": "c4a203c39b8e4ecb91feff1a9820dca8",
+      "is_public": true,
+      "virtual_size": null,
+      "properties": {},
+      "size": 3740163
+    }
+  ]
 }
-]
-
 ```
 
 #### 1.2  Get a specific image
@@ -139,26 +138,23 @@ GET http://\<hostname>:\<port_no>/images/\<image_id>
 
 ```
 {
-    "status": "active",
-    "created_at": "2015-07-22T05:27:55Z",
-    "name": "cirros-0.3.2-x86_64-uec-ramdisk",
-    "tags": [],
-    "container_format": "ari",
-    "min_ram": 0,
-    "disk_format": "ari",
-    "updated_at": "2015-07-22T05:27:55Z",
-    "visibility": "public",
-    "owner": "54915a05b0bb43dcbb218525c426b6a5",
-    "schema": "/v2/schemas/image",
-    "protected": false,
-    "file": "/v2/images/9cd36ea3-f225-4383-ae0a-61a020112223/file",
-    "checksum": "68085af2609d03e51c7662395b5b6e4b",
-    "min_disk": 0,
-    "virtual_size": null,
-    "id": "9cd36ea3-f225-4383-ae0a-61a020112223",
-    "size": 3723817
-  }
-
+  "status": "active",
+  "name": "cirros-0.3.4-x86_64-uec-ramdisk",
+  "deleted": false,
+  "container_format": "ari",
+  "created_at": "2015-12-02T11:05:51.000000",
+  "disk_format": "ari",
+  "updated_at": "2015-12-02T11:05:52.000000",
+  "id": "57ed5365-e4a6-466e-9250-c427ecf0e465",
+  "min_disk": 0,
+  "protected": false,
+  "checksum": "be575a2b939972276ef675752936977f",
+  "owner": "c4a203c39b8e4ecb91feff1a9820dca8",
+  "is_public": true,
+  "_loaded": false,
+  "min_ram": 0,
+  "size": 3740163
+}
 
 ```
 
@@ -218,24 +214,21 @@ POST http://\<hostname>:\<port_no>/images/
 ```
 {
   "status": "queued",
-  "created_at": "2015-09-28T18:57:46Z",
-  "name": "cirrosimage",
-  "tags": [],
+  "name": "glance_image_remote",
+  "deleted": false,
   "container_format": "bare",
-  "min_ram": 500,
-  "disk_format": "qcow2",
-  "updated_at": "2015-09-28T18:57:46Z",
-  "visibility": "private",
-  "copy_from": "http://cloudhyd.com/openstack/images/cirros-0.3.0-i386-disk.img",
-  "owner": "54915a05b0bb43dcbb218525c426b6a5",
-  "schema": "/v2/schemas/image",
+  "created_at": "2015-12-16T05:41:32.000000",
+  "disk_format": "iso",
+  "updated_at": "2015-12-16T05:41:32.000000",
+  "id": "c4aef384-ca6b-4215-987c-00cc864b625e",
+  "min_disk": 500,
   "protected": false,
-  "file": "/v2/images/1abcd75b-3385-43e6-94fb-948d1b241774/file",
   "checksum": null,
-  "min_disk": 1,
-  "virtual_size": null,
-  "id": "1abcd75b-3385-43e6-94fb-948d1b241774",
-  "size": null
+  "owner": "85ee3d12cb6947d5b4bb479c8944d4dc",
+  "is_public": false,
+  "_loaded": false,
+  "min_ram": 1,
+  "size": 1054867456
 }
 
 ```
@@ -296,25 +289,23 @@ PUT http://\<hostname>:\<port_no>/images/\<image_name>
 ```
 {
   "status": "queued",
-  "created_at": "2015-09-28T18:57:46Z",
   "name": "ubuntu_image",
-  "tags": [],
+  "deleted": false,
   "container_format": "bare",
-  "min_ram": 500,
-  "disk_format": "qcow2",
-  "updated_at": "2015-09-28T18:57:46Z",
-  "visibility": "private",
-  "copy_from": "http://cloudhyd.com/openstack/images/cirros-0.3.0-i386-disk.img",
-  "owner": "54915a05b0bb43dcbb218525c426b6a5",
-  "schema": "/v2/schemas/image",
+  "created_at": "2015-12-16T05:41:32.000000",
+  "disk_format": "ari",
+  "updated_at": "2015-12-16T05:43:19.000000",
+  "id": "c4aef384-ca6b-4215-987c-00cc864b625e",
+  "min_disk": 500,
   "protected": false,
-  "file": "/v2/images/1abcd75b-3385-43e6-94fb-948d1b241774/file",
   "checksum": null,
-  "min_disk": 1,
-  "virtual_size": null,
-  "id": "1abcd75b-3385-43e6-94fb-948d1b241774",
-  "size": null
+  "owner": "85ee3d12cb6947d5b4bb479c8944d4dc",
+  "is_public": false,
+  "_loaded": false,
+  "min_ram": 1,
+  "size": 1054867456
 }
+
 ```
 
 #### 1.5  Delete image
@@ -328,7 +319,7 @@ DELETE  | /images/\<image_id>      |Delete image
 It deletes a image matching with the id we pass in URI.
 </p>
 
-<p><b>Normal response code</b>:200 OK 
+<p><b>Normal response code</b>:204  
 </p>
 
      
@@ -348,6 +339,5 @@ DELETE http://\<hostname>:\<port_no>/images/\<image_id>
 ##### 1.5.2 Delete image Response
 
 This operation does not return any json response.
-
 
 
