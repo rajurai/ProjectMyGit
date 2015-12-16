@@ -58,32 +58,82 @@ GET http://\<servername>:\<port_no>/servers/
 {
   "servers": [
     {
-      "id": "7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+      "OS-EXT-STS:task_state": null,
+      "addresses": {
+        "demo_network_1": [
+          {
+            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:c6:ad:77",
+            "version": 4,
+            "addr": "192.168.10.2",
+            "OS-EXT-IPS:type": "fixed"
+          }
+        ],
+        "demo_network_2": [
+          {
+            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:68:4a:ff",
+            "version": 4,
+            "addr": "192.168.11.2",
+            "OS-EXT-IPS:type": "fixed"
+          }
+        ]
+      },
       "links": [
         {
-          "href": "http://128.107.2.152:8774/v2/54915a05b0bb43dcbb218525c426b6a5/servers/7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+          "href": "http://128.107.32.235:8774/v2/85ee3d12cb6947d5b4bb479c8944d4dc/servers/0029efd3-fc5a-4a78-b0d4-a42f01a6cec3",
           "rel": "self"
         },
         {
-          "href": "http://128.107.2.152:8774/54915a05b0bb43dcbb218525c426b6a5/servers/7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+          "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/servers/0029efd3-fc5a-4a78-b0d4-a42f01a6cec3",
           "rel": "bookmark"
         }
       ],
-      "name": "ctlr-server"
-    },
-    {
-      "id": "3a735203-a882-45a9-a604-342681166d5c",
-      "links": [
+      "image": {
+        "id": "dc00e717-12a4-4570-8c60-ed47be0c34f8",
+        "links": [
+          {
+            "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/images/dc00e717-12a4-4570-8c60-ed47be0c34f8",
+            "rel": "bookmark"
+          }
+        ]
+      },
+      "OS-EXT-STS:vm_state": "active",
+      "OS-SRV-USG:launched_at": "2015-12-15T07:30:12.000000",
+      "flavor": {
+        "id": "1",
+        "links": [
+          {
+            "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/flavors/1",
+            "rel": "bookmark"
+          }
+        ]
+      },
+      "id": "0029efd3-fc5a-4a78-b0d4-a42f01a6cec3",
+      "security_groups": [
         {
-          "href": "http://128.107.2.152:8774/v2/54915a05b0bb43dcbb218525c426b6a5/servers/3a735203-a882-45a9-a604-342681166d5c",
-          "rel": "self"
+          "name": "default"
         },
         {
-          "href": "http://128.107.2.152:8774/54915a05b0bb43dcbb218525c426b6a5/servers/3a735203-a882-45a9-a604-342681166d5c",
-          "rel": "bookmark"
+          "name": "default"
         }
       ],
-      "name": "minecraft-server"
+      "user_id": "2b2b17dfcae14e5893e7a7cc0d553820",
+      "OS-DCF:diskConfig": "MANUAL",
+      "accessIPv4": "",
+      "accessIPv6": "",
+      "progress": 0,
+      "OS-EXT-STS:power_state": 1,
+      "OS-EXT-AZ:availability_zone": "nova",
+      "config_drive": "True",
+      "status": "ACTIVE",
+      "updated": "2015-12-15T07:30:12Z",
+      "hostId": "3dec2d4cb66703af03f92719027440b967555c8840ee71587b892195",
+      "OS-SRV-USG:terminated_at": null,
+      "key_name": "nova_keypair",
+      "name": "nova_instance",
+      "created": "2015-12-15T07:30:07Z",
+      "tenant_id": "85ee3d12cb6947d5b4bb479c8944d4dc",
+      "os-extended-volumes:volumes_attached": [],
+      "metadata": {}
     }
   ]
 }
@@ -126,66 +176,71 @@ GET http://\<servername>:\<port_no>/servers/\<server_id>
 ```
 {
   "server": {
-    "status": "ACTIVE",
-    "hostId": "39abeaf7293690a5ded13d38b4c475f901631a7beb78aff4d22607fd",
+    "OS-EXT-STS:task_state": null,
     "addresses": {
-      "public": [
+      "ctlr3_network": [
         {
-          "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:1c:bb:cf",
+          "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:09:0e:ca",
           "version": 4,
-          "addr": "192.168.20.5",
-          "OS-EXT-IPS:type": "fixed"
-        }
-      ],
-      "private": [
-        {
-          "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:1c:b2:a3",
-          "version": 4,
-          "addr": "192.168.15.4",
+          "addr": "192.168.20.7",
           "OS-EXT-IPS:type": "fixed"
         }
       ]
     },
     "links": [
       {
-        "href": "http://128.107.2.152:8774/v2/54915a05b0bb43dcbb218525c426b6a5/servers/7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+        "href": "http://128.107.32.235:8774/v2/85ee3d12cb6947d5b4bb479c8944d4dc/servers/e0e260a9-9af0-46d1-ae61-1e0cee2cc66e",
         "rel": "self"
       },
       {
-        "href": "http://128.107.2.152:8774/54915a05b0bb43dcbb218525c426b6a5/servers/7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+        "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/servers/e0e260a9-9af0-46d1-ae61-1e0cee2cc66e",
         "rel": "bookmark"
       }
     ],
     "image": {
-      "id": "c48add99-3cd3-4d41-90ff-5ebed89395ac",
+      "id": "dc00e717-12a4-4570-8c60-ed47be0c34f8",
       "links": [
         {
-          "href": "http://128.107.2.152:8774/54915a05b0bb43dcbb218525c426b6a5/images/c48add99-3cd3-4d41-90ff-5ebed89395ac",
+          "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/images/dc00e717-12a4-4570-8c60-ed47be0c34f8",
           "rel": "bookmark"
         }
       ]
     },
+    "OS-EXT-STS:vm_state": "active",
+    "OS-SRV-USG:launched_at": "2015-12-11T09:22:08.000000",
     "flavor": {
-      "id": "2",
+      "id": "1",
       "links": [
         {
-          "href": "http://128.107.2.152:8774/54915a05b0bb43dcbb218525c426b6a5/flavors/2",
+          "href": "http://128.107.32.235:8774/85ee3d12cb6947d5b4bb479c8944d4dc/flavors/1",
           "rel": "bookmark"
         }
       ]
     },
-    "networks": {
-      "public": [
-        "192.168.20.5"
-      ],
-      "private": [
-        "192.168.15.4"
-      ]
-    },
-    "name": "ctlr-server",
-    "created": "2015-08-10T19:59:49Z",
-    "tenant_id": "54915a05b0bb43dcbb218525c426b6a5",
-    "id": "7dd1a243-8bc0-45a6-b63f-5155e0e3d8ec",
+    "id": "e0e260a9-9af0-46d1-ae61-1e0cee2cc66e",
+    "security_groups": [
+      {
+        "name": "default"
+      }
+    ],
+    "user_id": "2b2b17dfcae14e5893e7a7cc0d553820",
+    "OS-DCF:diskConfig": "MANUAL",
+    "accessIPv4": "",
+    "accessIPv6": "",
+    "progress": 0,
+    "OS-EXT-STS:power_state": 1,
+    "OS-EXT-AZ:availability_zone": "nova",
+    "config_drive": "True",
+    "status": "ACTIVE",
+    "updated": "2015-12-11T09:22:10Z",
+    "hostId": "3dec2d4cb66703af03f92719027440b967555c8840ee71587b892195",
+    "OS-SRV-USG:terminated_at": null,
+    "key_name": "nova_keypair",
+    "name": "test_hori_1",
+    "created": "2015-12-11T09:22:02Z",
+    "tenant_id": "85ee3d12cb6947d5b4bb479c8944d4dc",
+    "os-extended-volumes:volumes_attached": [],
+    "metadata": {}
   }
 }
 
@@ -231,10 +286,11 @@ POST http://\<servername>:\<port_no>/servers/
 ```
 {
     "server": {
-        "name": "instance_test",
+        "name": "demo_instance",
         "flavor": "42",
         "image": "c9dcc32d-60f1-4e17-8996-046216fe9746",
-        "keyname": "",
+        "keyname": "nova_keypair",
+        "security_groups": "",
         "min_count":"1",
         "networks": "[{'net-id':'fc6b502a-5365-4c24-93e5-e40bfdf7c5a0', 'v4-fixed-ip': ''}]"
     }  
