@@ -79,7 +79,7 @@ The Gateway majorly have three components as below:
 
 ### Api Server
 
-API server exposes uniform REST APIs and abstracts the complexity of many platform APIs. It introduce a new construct called cloud Namespace which is used addressing of request.
+API server exposes uniform REST APIs and abstracts the complexity of many platform APIs. It introduces a new construct called cloud Namespace which is used for addressing of requests.
 
 #### Admin API
 
