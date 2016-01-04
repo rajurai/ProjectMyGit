@@ -5,7 +5,7 @@ Alliance is a Software Defined Gateway for inter-cloud integration, which stitch
 **Table of Contents**
 
 - [Overview](#overview)
-    - [Hybrid cloud models](#hybridcloudmodels)
+    - [Hybrid cloud models](#hybrid-cloud-models)
     - [Features](#features)
     - [Gateway Architecture](#gateway-architecture)
     - [Components](#components)
@@ -36,18 +36,18 @@ In this model, a private cloud or VPC consumes resources from shared pool from p
 
 ### Model 2
 
-In this model, a private cloud or VPC consumes resources from dedicated resource pool (physical resources) from provider cloud. It provide resource isolation and capacity guarantee. In some cases a provider offers "Cloud As A Service" to back on-prem private cloud or VPC.   
+In this model, a private cloud or VPC consumes resources from dedicated resource pool (physical resources) from provider cloud. It provide resource isolation and capacity guarantee. In some cases a provider offers "Cloud As A Service" to back on-premise private cloud or VPC.   
 
 ## Features
 
-The main design goals of Allaince is to integrate infrastructure (IaaS) and platform (PaaS) cloud capabilities to provide a uniform interoperable platform. Alliance currently supports OpenStack cloud platform but it follows platform agnostic pluggable modular design, that means underpinning cloud platform can be different. Following are the specific features 
+The main design goals of Alliance is to integrate infrastructure (IaaS) and platform (PaaS) cloud capabilities to provide a uniform inter-operable platform. Alliance currently supports OpenStack cloud platform but it follows platform agnostic plug-able modular design, that means underpinning cloud platform can be different. Following are the specific features 
 
 * Single pane of glass for Intercloud.
     * Single endpoint and uniform set of APIs to manage resources across many distinct clouds.   
     * Resource management lookup/provisioning/de-provisioning (IaaS) across clouds.
     * Orchestration. (Integration with HOT)
     * Intercloud OSS and BSS support.
-* Moduler and Pluggable framework.
+* Modular and Plug-able framework.
     * Platform agnostic integration.
 * PKI Trust based integration.
     * Cryptographic (ACS 256) secured communication.
@@ -61,21 +61,21 @@ The main design goals of Allaince is to integrate infrastructure (IaaS) and plat
     * Intercloud meter synchronization and aggregation.
 * Distributed Quota enforcement.
 
-## Architecture 
+## Gateway Architecture 
 
 The architecture is based on decentralized peer-to-peer gateway interactions. As per the diagram below all gateways are peer managed by different organization and can be a client/service based on transaction flow. Gateway exposes high performance Thrift RPC API and communication between gateways will happens on RPC. RPC APIs are required to support single endpoint, inter-gateway trust and performance.
 
-Communication between gateway and underpinning cloud happens on platform native protocol; as mentioned gateway follows pluggable design paradigm to communicate with underpinning cloud. 
+Communication between gateway and underpinning cloud happens on platform native protocol; as mentioned gateway follows plug-able design paradigm to communicate with underpinning cloud. 
 
 The gateway also exposes REST APIs which is needed to support uniform REST API requirements, which makes it platform agnostic. 
 
 ![Architecture](docs/_static/Architecture.png)
 
-## Gateway Components
+## Components
 
 ![Alliance Component Diagram](docs/_static/AllianceBlockDiagram.png)
 
-The Gateway majorly have three components as below 
+The Gateway majorly have three components as below; 
 
 ### Api Server
 
@@ -89,7 +89,7 @@ Admin API are used to setup partners, metadata and PKI trust, these APIs are mos
 
 Management APIs are used for inter-cloud resource management which includes lookup, provisioning and de-provisioning of resources.  
 
-[API Docs](https://github.com/CiscoCloud/alliance/tree/update_readme/apis)
+[API Docs](https://github.com/CiscoCloud/alliance/tree/devel/apis)
 
 ### RPC Server
 
@@ -99,11 +99,11 @@ RPC server exposes Thrift APIs for inter-gateway communicate and provide trust b
 
 TBD - Not implemented
 
-## Features and Roadmap
+## Roadmap
 
 Below are the list of features partially or fully implemented in P2P gateway, unchecked items are roadmap. 
 
-### Plateform plug-in
+### Platform plug-in
 
 - [x] OpenStack Kilo
 - [ ] OpenStack Liberty
@@ -147,7 +147,7 @@ Below are the list of features partially or fully implemented in P2P gateway, un
 
 - [ ] Not Implemented 
 
-#### Image Managemetn
+#### Image Management
 
 - [x] Raju
  
@@ -184,7 +184,7 @@ Note:
 ### Deployment Procedure
 -----------------------------------------------------------------------------------------------------------------------------
 (Aravind and Andrew)
-###### Please refer to the [Getting Started Guide](path/for the/ getting started guide),which covers deployments.
+###### Please refer to the [Getting Started Guide](#getting-started),which covers deployments.
 
 #### Deploying Using Debian Package
 `````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
@@ -193,7 +193,7 @@ Note:
 
 ## Documentation
 
-###### All documentation is located at [URL of the Documentation](path/of/the/documentation page)
+###### All documents are located [here](https://github.com/CiscoCloud/alliance/tree/devel/apis)
 
 ## Development
 ###### Write about the details of how anyone can contribute to the project.
