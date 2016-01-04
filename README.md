@@ -93,7 +93,7 @@ Management APIs are used for inter-cloud resource management which includes look
 
 ### RPC Server
 
-RPC server exposes Thrift APIs for inter-gateway communicate and provide trust based inter-cloud integration. Trust validation is happens with PKI and symmetric cryptography.   
+RPC server exposes Thrift APIs for inter-gateway communication and provide trust based inter-cloud integration. Trust validation is happens with PKI and symmetric cryptography.   
 
 ### Asynchronous worker
 
