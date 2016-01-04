@@ -6,9 +6,9 @@ Alliance is a Software Defined Gateway for inter-cloud integration, which stitch
 
 - [Overview](#overview)
     - [Hybrid cloud models](#hybrid-cloud-models)
-    - [Features](#features)
+    - [Gateway Features](#features)
     - [Gateway Architecture](#gateway-architecture)
-    - [Components](#components)
+    - [Gateway Components](#components)
         - [API Server](#api-server)
         - [Agent Server](#agent-server)
     - [Getting Started](#getting-started)
@@ -38,7 +38,7 @@ In this model, a private cloud or VPC consumes resources from shared pool from p
 
 In this model, a private cloud or VPC consumes resources from dedicated resource pool (physical resources) from provider cloud. It provide resource isolation and capacity guarantee. In some cases a provider offers "Cloud As A Service" to back on-premise private cloud or VPC.   
 
-## Features
+## Gateway Features
 
 The main design goals of Alliance is to integrate infrastructure (IaaS) and platform (PaaS) cloud capabilities to provide a uniform inter-operable platform. Alliance currently supports OpenStack cloud platform but it follows platform agnostic plugable modular design, that means underpinning cloud platform can be different. Following are the specific features 
 
@@ -71,7 +71,7 @@ The gateway also exposes REST APIs which is needed to support uniform REST API r
 
 ![Architecture](docs/_static/Architecture.png)
 
-## Components
+## Gateway Components
 
 ![Alliance Component Diagram](docs/_static/AllianceBlockDiagram.png)
 
