@@ -22,6 +22,7 @@ Alliance is a Software Defined Gateway for inter-cloud integration, which stitch
         - [Operations](#operations)
         - [Platform Support](#platform-support)
     - [Development](#development)
+    - [Getting Support](#getting-support)
     - [License](#license)
 
 ## Hybrid cloud models
