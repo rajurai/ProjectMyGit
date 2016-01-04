@@ -40,14 +40,14 @@ In this model, a private cloud or VPC consumes resources from dedicated resource
 
 ## Features
 
-The main design goals of Alliance is to integrate infrastructure (IaaS) and platform (PaaS) cloud capabilities to provide a uniform inter-operable platform. Alliance currently supports OpenStack cloud platform but it follows platform agnostic plug-able modular design, that means underpinning cloud platform can be different. Following are the specific features 
+The main design goals of Alliance is to integrate infrastructure (IaaS) and platform (PaaS) cloud capabilities to provide a uniform inter-operable platform. Alliance currently supports OpenStack cloud platform but it follows platform agnostic plugable modular design, that means underpinning cloud platform can be different. Following are the specific features 
 
 * Single pane of glass for Intercloud.
     * Single endpoint and uniform set of APIs to manage resources across many distinct clouds.   
     * Resource management lookup/provisioning/de-provisioning (IaaS) across clouds.
     * Orchestration. (Integration with HOT)
     * Intercloud OSS and BSS support.
-* Modular and Plug-able framework.
+* Modular and Plugable framework.
     * Platform agnostic integration.
 * PKI Trust based integration.
     * Cryptographic (ACS 256) secured communication.
@@ -65,7 +65,7 @@ The main design goals of Alliance is to integrate infrastructure (IaaS) and plat
 
 The architecture is based on decentralized peer-to-peer gateway interactions. As per the diagram below all gateways are peer managed by different organization and can be a client/service based on transaction flow. Gateway exposes high performance Thrift RPC API and communication between gateways will happens on RPC. RPC APIs are required to support single endpoint, inter-gateway trust and performance.
 
-Communication between gateway and underpinning cloud happens on platform native protocol; as mentioned gateway follows plug-able design paradigm to communicate with underpinning cloud. 
+Communication between gateway and underpinning cloud happens on platform native protocol; as mentioned gateway follows plugable design paradigm to communicate with underpinning cloud. 
 
 The gateway also exposes REST APIs which is needed to support uniform REST API requirements, which makes it platform agnostic. 
 
