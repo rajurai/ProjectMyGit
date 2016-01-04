@@ -9,7 +9,7 @@ Alliance is a Software Defined Gateway for inter-cloud integration, which stitch
     - [Features](#features)
     - [Gateway Architecture](#gateway-architecture)
     - [Components](#components)
-        - [Api Server](#api-server)
+        - [API Server](#api-server)
         - [Agent Server](#agent-server)
     - [Getting Started](#getting-started)
         - [Software Requirements](#software-requirements)
@@ -77,7 +77,7 @@ The gateway also exposes REST APIs which is needed to support uniform REST API r
 
 The Gateway majorly have three components as below:
 
-### Api Server
+### API Server
 
 API server exposes uniform REST APIs and abstracts the complexity of many platform APIs. It introduces a new construct called cloud Namespace which is used for addressing of requests.
 
