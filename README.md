@@ -75,7 +75,7 @@ The gateway also exposes REST APIs which is needed to support uniform REST API r
 
 ![Alliance Component Diagram](docs/_static/AllianceBlockDiagram.png)
 
-The Gateway majorly have three components as below; 
+The Gateway majorly have three components as below:
 
 ### Api Server
 
