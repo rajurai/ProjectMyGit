@@ -1,7 +1,6 @@
 
 |<font color='green'> API</font>|<font color='green'>Openstack API</font>|<font color='green'>Alliance</font>|
 |-------------------------------|:--------------------------------------:|----------------------------------:|
-| Compute       |                                  |                                            |
 | List Servers  | id                               |     OS-EXT-STS:task_state                  |
 |               | name                             |     addresses                              |
 |               | links                            |     links                                  |
